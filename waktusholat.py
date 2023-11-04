@@ -18,21 +18,21 @@ def request(namakota):
         kota_id = next((kota["id"] for kota in idkota["kota"]
                        if kota["nama"] == best_match[0]), None)
         if kota_id:
-            # print("ID dari", best_match[0], "adalah:", kota_id)
+            print("ID dari", best_match[0], "adalah:", kota_id)
             jadwalkota = requests.get(
                 f"https://api.banghasan.com/sholat/format/json/jadwal/kota/{kota_id}/tanggal/{now.year}-{month}-{day}").json()
-            # print(f"Tanggal : {jadwalkota['jadwal']['data']['tanggal']}")
-    #         print(f"Shubuh: {jadwalkota['jadwal']['data']['subuh']}")
-    #         print(f"Dhuha: {jadwalkota['jadwal']['data']['dhuha']}")
-    #         print(f"Dzuhur: {jadwalkota['jadwal']['data']['dzuhur']}")
-    #         print(f"Ashar: {jadwalkota['jadwal']['data']['ashar']}")
-    #         print(f"Maghrib: {jadwalkota['jadwal']['data']['maghrib']}")
-    #         print(f"Isya: {jadwalkota['jadwal']['data']['isya']}")
+            print(f"Tanggal : {jadwalkota['jadwal']['data']['tanggal']}")
+            print(f"Shubuh: {jadwalkota['jadwal']['data']['subuh']}")
+            print(f"Dhuha: {jadwalkota['jadwal']['data']['dhuha']}")
+            print(f"Dzuhur: {jadwalkota['jadwal']['data']['dzuhur']}")
+            print(f"Ashar: {jadwalkota['jadwal']['data']['ashar']}")
+            print(f"Maghrib: {jadwalkota['jadwal']['data']['maghrib']}")
+            print(f"Isya: {jadwalkota['jadwal']['data']['isya']}")
             
-    #     else:
-    #         print("Kota tidak ditemukan.")
-    # else:
-    #     print("Kota tidak ditemukan.")
+        else:
+            print("Kota tidak ditemukan.")
+    else:
+        print("Kota tidak ditemukan.")
 
 
 request("surabaya")  
