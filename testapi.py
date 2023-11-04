@@ -7,7 +7,7 @@ idkota = requests.get("https://api.banghasan.com/sholat/format/json/kota").json(
 now = datetime.datetime.now()
 find_id = input("Nama Kota : ").upper()
 
-
+    
 for kota in idkota["kota"]:
     if kota["nama"] == find_id:
         print("ID dari", find_id, "adalah:", kota["id"])
